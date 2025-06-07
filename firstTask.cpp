@@ -13,10 +13,15 @@ void print(int array[], int array_size, string separator = " ") {
 int main(int argc, char** argv)
 {
 	int some_array_1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	int some_array_2[] = {6, 5, 4, 8};
-	int some_array_3[] = {1, 4, 3, 7, 5};
+	constexpr int array_size_1 = sizeof(some_array_1) / sizeof(some_array_1[0]);
 	
-	print(some_array_1, 9);
-	print(some_array_2, 4);
-	print(some_array_3, 5);
+	int some_array_2[] = {6, 5, 4, 8};
+	constexpr int array_size_2 = sizeof(some_array_2) / sizeof(some_array_2[0]);
+	
+	int some_array_3[] = {1, 4, 3, 7, 5};
+	constexpr int array_size_3 = sizeof(some_array_3) / sizeof(some_array_3[0]);
+	
+	print(some_array_1, array_size_1);
+	print(some_array_2, array_size_2);
+	print(some_array_3, array_size_3);
 }
