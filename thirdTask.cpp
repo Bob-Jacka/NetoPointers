@@ -23,12 +23,14 @@ void reverse(int array[], int array_size) {
 int main()
 {
 	int array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	std::cout << "До функции reverse: ";
-	print(array, 9);
+	constexpr int array_size = sizeof(array) / sizeof(array[0]);
 	
-	reverse(array, 9);
+	std::cout << "До функции reverse: ";
+	print(array, array_size);
+	
+	reverse(array, array_size);
 	
 	std::cout << "После функции reverse: ";
-	print(array, 9);
+	print(array, array_size);
 }
 
